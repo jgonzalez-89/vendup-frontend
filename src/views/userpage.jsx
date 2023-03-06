@@ -9,7 +9,7 @@ import ProductoComponent from '../components/ComponenteFormularioProducto.jsx';
 import AjustesComponent from '../components/ComponenteFormularioPerfil.jsx';
 import PremiumComponent from '../components/ComponentePremium.jsx';
 import ButtonUser from '../components/ButtonUser.jsx';
-import userProfilePicture from '../../public/perfil.jpg';
+import userProfilePicture from '../public/perfil.jpg';
 
 const Userpage = () => {
   const token = Cookies.get('access_token');

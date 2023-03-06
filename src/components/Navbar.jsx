@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { Button, Navbar, Nav, Container } from 'react-bootstrap';
-import LogoVendup from '../../public/vendup.png';
+import LogoVendup from '../public/vendup.png';
 
 const Header = ({ NavHome, NavProducts, NavUser, onClickLogOut }) => {
   return (

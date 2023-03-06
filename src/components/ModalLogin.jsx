@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Modal, Form, Row, Col, Container } from 'react-bootstrap';
 import { HttpHandler } from '../http/handler';
 import Cookies from 'js-cookie';
-import '../../public/logoblack.png';
 import '../style/modals.css';
 
 function Login() {

@@ -1,9 +1,9 @@
 import React from 'react';
 // import Navbar from './Navbar.jsx';
 import '../style/team.css';
-import '../../public/Jose.png';
-import '../../public/quique.jpeg';
-import '../../public/Lola.png';
+import '../public/Jose.png';
+import '../public/quique.jpeg';
+import '../public/Lola.png';
 import Header from './Navbar.jsx';
 
 const Team = () => (

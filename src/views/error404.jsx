@@ -1,5 +1,5 @@
 import React from 'react';
-import img404 from '../../public/error-404.jpg';
+import img404 from '../public/error-404.jpg';
 
 import Header from '../components/Navbar.jsx';
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, ListGroup, Button } from 'react-bootstrap';
 import { HttpHandler } from '../http/handler';
-import empy from '../../public/empy2.jpg';
+import empy from '../public/empy2.jpg';
 import CardPremium from './CardPremium.jsx';
 
 const ComprasComponent = ({ userId }) => {

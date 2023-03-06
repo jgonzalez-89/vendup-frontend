@@ -4,7 +4,7 @@ import '../style/home.css';
 import CardsHome from '../components/CardsHome.jsx';
 import Login from '../components/ModalLogin.jsx';
 import Register from '../components/ModalRegister.jsx';
-import LogoVendup from '../../public/vendup.png'
+import LogoVendup from '../public/vendup.png'
 import Footer from '../components/Footer.jsx';
 
 

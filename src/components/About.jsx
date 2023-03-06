@@ -6,9 +6,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Footer from './Footer.jsx';
 // import "../../../../public/image1.jpeg";
-import '../../public/products.jpeg';
-import '../../public/chat.png';
-import '../../public/deal.jpeg';
+import '../public/products.jpeg'
+import '../public/products.jpeg';
+import '../public/chat.png';
+import '../public/deal.jpeg';
 // import "../../../../public/playstore.png";
 // import "../../../../public/appstore.png";
 // import "../../../../public/mobile.png";

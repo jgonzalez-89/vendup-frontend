@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoVendup from '../../public/vendup.png';
+import LogoVendup from '../public/vendup.png';
 import { Nav, Container } from 'react-bootstrap';
 
 export const Footer = ({ NavHome, NavUser, NavProducts }) => {
