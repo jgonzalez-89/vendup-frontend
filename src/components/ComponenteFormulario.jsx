@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Form, FormGroup, FormLabel, FormControl, Button, FormSelect, ModalFooter, InputGroup } from 'react-bootstrap';
-import { HttpHandler } from '../http/handler.js';
+import { HttpHandler } from '../http/handler';
 import { CloudinaryImage } from '@cloudinary/url-gen';
 import { categories } from '../../data.js';
 
