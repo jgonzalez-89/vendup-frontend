@@ -1,16 +1,16 @@
 import React from 'react';
 // import Navbar from './Navbar.jsx';
 import '../style/team.css';
-import '../public/Jose.png';
-import '../public/quique.jpeg';
-import '../public/Lola.png';
+import jose from '../public/Jose.png';
+import quique from'../public/quique.jpg';
+import lola from'../public/Lola.png';
 import Header from './Navbar.jsx';
 
 const Team = () => (
   <>
     <Header NavHome={'/'} NavProducts={'/products'} NavUser={'/user'} />
 
-    <hr className="featurette-divider"></hr>
+    <hr className="featurette-divider"/>
 
     <div className="cuerpopagina row gx-5">
       <div className="col-lg-4">
@@ -18,7 +18,7 @@ const Team = () => (
           <div className="box">
             <div className="body">
               <div className="imgContainer">
-                <img src="Jose.png" alt=""></img>
+                <img src={jose} alt=""/>
               </div>
               <div className="content d-flex flex-column justify-content-center">
                 <div className="center">
@@ -48,7 +48,7 @@ const Team = () => (
           <div className="box">
             <div className="body">
               <div className="imgContainer">
-                <img src="quique.jpeg" alt=""></img>
+              <img src={quique} alt=""/>
               </div>
               <div className="content d-flex flex-column justify-content-center">
                 <div className="center">
@@ -78,7 +78,7 @@ const Team = () => (
           <div className="box">
             <div className="body">
               <div className="imgContainer">
-                <img src="Lola.png" alt=""></img>
+                <img src={lola} alt=""/>
               </div>
               <div className="content d-flex flex-column justify-content-center">
                 <div className="center">
