@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
-import StripeCheckout from 'react-stripe-checkout';
-import { HttpHandler } from '../http/handler';
-import jwt_decode from 'jwt-decode';
-import Cookies from 'js-cookie';
+import React, { useState, useEffect } from "react";
+import { Button } from "react-bootstrap";
+import StripeCheckout from "react-stripe-checkout";
+import { HttpHandler } from "../http/handler";
+import jwt_decode from "jwt-decode";
+import Cookies from "js-cookie";
 
 const Stripe = (props) => {
-  const token = Cookies.get('access_token');
+  const token = Cookies.get("access_token");
   const decoded = jwt_decode(token);
   const userId = decoded.sub;
   const [buyerUser, setBuyerUser] = useState({});
@@ -35,7 +35,7 @@ const Stripe = (props) => {
         owner_id: userId,
         product_id: props.store.selectedProduct.id,
       });
-      if (data.status === 'success') {
+      if (data.status === "success") {
         const shoppingProductData = {
           owner_id: userId,
           product_id: props.store.selectedProduct.id,
@@ -43,19 +43,24 @@ const Stripe = (props) => {
           created_at_shopping: new Date(),
           updated_at_shopping: new Date(),
           price: monto,
-          status_paid: 'paid',
+          status_paid: "paid",
           paid_at: new Date(),
-          purchase_method: 'stripe',
+          purchase_method: "stripe",
           commission: 0.1,
         };
         await handler.postShoppingProduct(shoppingProductData);
-        const updatedProduct = { ...props.store.selectedProduct, status_shooping: false };
+        const updatedProduct = {
+          ...props.store.selectedProduct,
+          status_shooping: false,
+        };
         await handler.putProductById(updatedProduct.id, updatedProduct);
-        alert('El pago se ha procesado correctamente. Será redirigido a la página de usuario.');
-        window.location = '/user';
+        alert(
+          "El pago se ha procesado correctamente. Será redirigido a la página de usuario."
+        );
+        window.location = "/user";
       } else {
         // Si el pago falló, mostrar un mensaje de error
-        alert('Error al procesar el pago: ' + data.message);
+        alert("Error al procesar el pago: " + data.message);
       }
     } catch (error) {
       console.error(error);
@@ -65,7 +70,7 @@ const Stripe = (props) => {
   return (
     <div>
       <StripeCheckout
-        stripeKey={"pk_test_51Mf8aTJwZ9bnrLE9UCzTjLIpqAEjnlQFYHAGwglPkNPYLRjfOE8wKus1ggkvtDTRAGz4lVMBANxmr2AT3KI8xJe80018srH0P7"}
+        stripeKey={import.meta.env.VITE_STRIPE_KEY}
         token={manejarPago}
         amount={monto * 100}
         name={buyerUser.name}

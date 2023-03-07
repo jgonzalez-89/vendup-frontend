@@ -1,9 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createRoot } from 'react-dom/client';
-import './style/index.css';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import "./style/index.css";
 
-import Layout from './layout.jsx';
+import Layout from "./layout.jsx";
 
-
-createRoot(document.querySelector('#app')).render(<Layout />);
+createRoot(document.querySelector("#app")).render(<Layout />);

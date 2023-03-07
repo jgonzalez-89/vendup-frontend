@@ -1,11 +1,10 @@
 import Cookies from "js-cookie";
 
-const API_BASE_URL ="https://flask-test-5dde.onrender.com/";
+const API_BASE_URL = "https://flask-test-5dde.onrender.com";
 const API_USER_URL = `${API_BASE_URL}/api/users`;
 const API_PRODUCT_URL = `${API_BASE_URL}/api/products`;
 const API_LOGIN_URL = `${API_BASE_URL}/login`;
 const API_REGISTER_URL = `${API_BASE_URL}/register`;
-const API_STRIPE_URL = API_BASE_URL;
 
 export function HttpHandler() {
   function getToken() {
@@ -165,7 +164,7 @@ export function HttpHandler() {
   }
 
   async function postStripePayment(payload) {
-    const response = await fetch(`${API_STRIPE_URL}/api/stripe`, {
+    const response = await fetch(`${API_BASE_URL}/api/stripe`, {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
@@ -177,7 +176,7 @@ export function HttpHandler() {
   }
 
   async function postShoppingProduct(payload) {
-    const response = await fetch(`${API_STRIPE_URL}/api/purchases`, {
+    const response = await fetch(`${API_BASE_URL}/api/purchases`, {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
