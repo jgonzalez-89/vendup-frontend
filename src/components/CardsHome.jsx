@@ -99,21 +99,46 @@ function CardsHome() {
         </div>
         {/* Agregar componente de paginación */}
         {filteredItems.length > itemsPerPage && (
-          <>
-            <div className="d-flex justify-content-center">
-              {Array.from({ length: Math.ceil(filteredItems.length / itemsPerPage) }, (_, i) => i + 1).map((pageNum) => (
-                <button
-                  style={{ marginBottom: '6rem' }}
-                  key={pageNum}
-                  className={`btn ${pageNum === page ? 'btn-warning' : 'btn-outline-warning'} mx-1`}
-                  onClick={() => setPage(pageNum)}
-                >
-                  {pageNum}
-                </button>
-              ))}
-            </div>
-          </>
-        )}
+  <>
+    <div className="d-flex justify-content-center">
+      <button
+        style={{ marginBottom: '6rem' }}
+        className={`btn ${page === 1 ? 'btn-outline-warning disabled' : 'btn-outline-warning'} mx-1`}
+        onClick={() => setPage(page - 1)}
+        disabled={page === 1}
+      >
+        Anterior
+      </button>
+      {Array.from({ length: Math.ceil(filteredItems.length / itemsPerPage) }, (_, i) => i + 1)
+        .slice((page - 1) % 5, (page - 1) % 5 + 5)
+        .map((pageNum) => (
+          <button
+            style={{ marginBottom: '6rem' }}
+            key={pageNum}
+            className={`btn ${pageNum === page ? 'btn-warning' : 'btn-outline-warning'} mx-1`}
+            onClick={() => setPage(pageNum)}
+          >
+            {pageNum}
+          </button>
+        ))}
+      <button
+        style={{ marginBottom: '6rem' }}
+        className={`btn ${page === Math.ceil(filteredItems.length / itemsPerPage) ? 'btn-outline-warning disabled' : 'btn-outline-warning'} mx-1`}
+        onClick={() => setPage(page + 1)}
+        disabled={page === Math.ceil(filteredItems.length / itemsPerPage)}
+      >
+        Siguiente
+      </button>
+      <button
+        style={{ marginBottom: '6rem' }}
+        className={`btn ${page === Math.ceil(filteredItems.length / itemsPerPage) ? 'btn-warning' : 'btn-outline-warning'} mx-1`}
+        onClick={() => setPage(Math.ceil(filteredItems.length / itemsPerPage))}
+      >
+        Ir a la última página
+      </button>
+    </div>
+  </>
+)}
       </div>
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
