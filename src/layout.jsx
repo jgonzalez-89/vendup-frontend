@@ -10,6 +10,7 @@ import Userpage from './views/userpage.jsx';
 import ProductView from './views/productview.jsx';
 import Payment from './views/payment.jsx';
 import Error404 from './views/error404.jsx';
+import LandingPage from './components/LandingPage.jsx';
 
 const Layout = () => {
   const basename = '/' || '';
@@ -18,7 +19,7 @@ const Layout = () => {
     <>
       <BrowserRouter basename={basename}>
         <Routes>
-          <Route element={<Home />} path="/" />
+          <Route element={<LandingPage />} path="/" />
           <Route element={<ProductView />} path="/products" />
           <Route element={<Payment />} path="/pay" />
           <Route element={<Userpage />} path="/user" />

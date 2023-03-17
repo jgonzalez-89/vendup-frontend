@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 
-const API_BASE_URL = "https://3001-jgonzalez89-vendupcomme-9rdpo4ck74r.ws-eu89.gitpod.io";
+const API_BASE_URL = "https://flask-api-vendup.onrender.com";
 // const API_BASE_URL = "https://flask-test-5dde.onrender.com";
 const API_USER_URL = `${API_BASE_URL}/api/users`;
 const API_PRODUCT_URL = `${API_BASE_URL}/api/products`;
