@@ -34,7 +34,7 @@ const PlataformBlock = ({ title, content }) => {
   }, [imageIndex, images.length]);
 
   return (
-    <Container className='mt-5'>
+    <Container className='mt-5 text-center'>
       <Row>
         <Col>
           <h1 className="display-5">{title}</h1>

@@ -7,7 +7,7 @@ const ProductBlock = ({ title, content, src }) => {
     <Container className="mt-5 text-center">
       <Row>
         <Col xs={12} md={6} className="col-12 col-md-6 order-md-1">
-          <img src={src} alt="imagen..." />
+          <img src={src} alt="imagen..."/>
         </Col>
         <Col xs={12} md={6} className="order-md-2">
           <Fade right>

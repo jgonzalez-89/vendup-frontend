@@ -14,7 +14,7 @@ function ItemsBlock() {
 
   useEffect(() => {
     async function fetchData() {
-      const result = await handler.getProduct(); // eliminar el parámetro sort
+      const result = await handler.getProduct('premium', 'desc');
       setData(result);
     }
     fetchData();
@@ -38,7 +38,7 @@ function ItemsBlock() {
 
   return (
     <>
-      <div className="container">
+      <div className="container mt-5 mb-5">
         <div className="row">
           {currentPageItems.map((item, index) => {
             const Component = item.premium ? CardPremium : CardFree;
