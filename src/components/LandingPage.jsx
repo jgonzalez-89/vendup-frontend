@@ -28,24 +28,28 @@ const LandingPage = () => {
         </Container>
       </Navbar>
 
-      <Container className="mt-5">
+      <Container className="mt-5 p-3">
         <HeaderBlock
           title="Bienvenido a VENDUP"
           content="¡Bienvenido a nuestro sitio web de compraventa de productos entre particulares! En nuestro sitio, puede encontrar una amplia variedad de productos de segunda mano en excelentes condiciones a precios asequibles. Con nuestro fácil sistema de navegación, puede buscar fácilmente los productos que necesita y ponerse en contacto directamente con el vendedor para realizar la compra. Además, nuestro sitio está creado en React, lo que significa que disfrutará de una experiencia de usuario rápida y eficiente. ¡Explora nuestro sitio hoy y encuentra las mejores ofertas en productos de segunda mano!"
           src={logo}
         />
-
+      </Container>
+      <Container className="mt-5 p-3">
         <ProductBlock
           title="Compra y vende fácil y seguro"
           content="Compra y vende fácil y seguro en nuestra plataforma de compraventa entre particulares. Busca y encuentra lo que necesitas, contáctate con el vendedor y acuerda la entrega. Publica tus productos, describe su calidad y espera a que los compradores te contacten. Una opción excelente para comprar o vender productos de segunda mano. Explora nuestro sitio hoy."
           src={imgProduct}
+          
         />
-
+      </Container>
+      <Container className="mt-5 p-3">
         <PlataformBlock
           title="Tecnologías modernas en nuestra plataforma"
           content="Nuestra plataforma es una aplicación web desarrollada utilizando una combinación de tecnologías modernas. Utilizamos Bootstrap como framework front-end para crear una interfaz de usuario responsive y adaptable. Cloudinary es nuestra solución de almacenamiento y entrega de imágenes que nos permite administrar y optimizar las imágenes de manera eficiente. JWT es nuestro método preferido de autenticación y autorización, lo que nos permite crear una experiencia de usuario personalizada y segura. Python es el lenguaje de programación que utilizamos para la parte backend de la plataforma, lo que nos permite construir una API REST robusta y escalable. React es nuestra librería de front-end preferida, que nos permite crear componentes reutilizables y una interfaz de usuario dinámica. Stripe es nuestra solución de pago preferida, que nos permite procesar pagos de manera segura y eficiente. Por último, utilizamos Vite como nuestro bundler de desarrollo para compilar y optimizar nuestro código. En resumen, nuestra plataforma utiliza tecnologías modernas y poderosas para ofrecer una experiencia de usuario rápida, segura y escalable."
         />
-
+      </Container>
+      <Container className="mt-5 p-3">
         <Fade bottom>
           <div id="infoBlock1" className="mt-5">
             <InfoBlock
