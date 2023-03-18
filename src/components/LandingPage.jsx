@@ -43,12 +43,12 @@ const LandingPage = () => {
           
         />
       </Container>
-      <Container className="mt-5 p-3">
+      {/* <Container className="mt-5 p-3">
         <PlataformBlock
           title="Tecnologías modernas en nuestra plataforma"
           content="Nuestra plataforma es una aplicación web desarrollada utilizando una combinación de tecnologías modernas. Utilizamos Bootstrap como framework front-end para crear una interfaz de usuario responsive y adaptable. Cloudinary es nuestra solución de almacenamiento y entrega de imágenes que nos permite administrar y optimizar las imágenes de manera eficiente. JWT es nuestro método preferido de autenticación y autorización, lo que nos permite crear una experiencia de usuario personalizada y segura. Python es el lenguaje de programación que utilizamos para la parte backend de la plataforma, lo que nos permite construir una API REST robusta y escalable. React es nuestra librería de front-end preferida, que nos permite crear componentes reutilizables y una interfaz de usuario dinámica. Stripe es nuestra solución de pago preferida, que nos permite procesar pagos de manera segura y eficiente. Por último, utilizamos Vite como nuestro bundler de desarrollo para compilar y optimizar nuestro código. En resumen, nuestra plataforma utiliza tecnologías modernas y poderosas para ofrecer una experiencia de usuario rápida, segura y escalable."
         />
-      </Container>
+      </Container> */}
       <Container className="mt-5 p-3">
         <Fade bottom>
           <div id="infoBlock1" className="mt-5">
