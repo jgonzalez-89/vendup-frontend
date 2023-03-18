@@ -13,7 +13,7 @@ const HeaderBlock = ({ title, content, src }) => {
           </Fade>
         </Col>
         <Col xs={12} md={6} className="order-md-2">
-          <img src={src} alt="imagen..."  />
+          <img className="mt-5 p-3 img-fluid" src={src} alt="imagen..."  />
         </Col>
       </Row>
     </Container>

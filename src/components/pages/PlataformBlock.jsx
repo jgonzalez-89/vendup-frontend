@@ -46,7 +46,7 @@ const PlataformBlock = ({ title, content }) => {
           <Col md={12} className="text-center">
             {images.slice(0, imageIndex + 1).map((image, index) => (
               <Fade bottom key={index}>
-                <img src={image.src} alt={image.alt} className="my-3 mx-3"/>
+                <img className="mt-5 p-3 img-fluid" src={image.src} alt={image.alt} />
               </Fade>
             ))}
           </Col>
