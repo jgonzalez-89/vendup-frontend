@@ -27,17 +27,6 @@ const ProductView = () => {
 
   const handler = new HttpHandler();
 
-  // console.log(data);
-  // console.log(userId);
-
-  // const expirationTime = decoded.exp * 1000 - 1800000; // 30 minutos
-  // const currentTime = Date.now();
-
-  // if (currentTime > expirationTime) {
-  //   Cookies.remove('access_token');
-  //   window.location.href = '/';
-  // }
-
   useEffect(() => {
     setPage(1);
   }, [category]);
@@ -60,8 +49,7 @@ const ProductView = () => {
         (item) =>
           (category === '' || item.category === category) &&
           (searchText === '' || item.name.toLowerCase().includes(searchText.toLowerCase())) &&
-          item.status_shooping === true && // Condición para productos con status_shooping true
-          item.owner_id !== userId // Agregar condición para que el userId no pueda comprar sus propios productos
+          item.status_shooping === true // Condición para productos con status_shooping true
       )
     : [];
 
@@ -110,7 +98,7 @@ const ProductView = () => {
             return (
               <div className="col-lg-4 col-md-6 col-12 my-1 mb-5" key={index}>
                 <Component
-                  actionButton={'Comprar'}
+                  actionButton={item.owner_id === userId ? '' : 'Comprar'}
                   item={item}
                   image={item.images}
                   title={item.name}

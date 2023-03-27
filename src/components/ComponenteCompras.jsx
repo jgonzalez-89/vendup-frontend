@@ -3,6 +3,7 @@ import { Card, ListGroup, Button } from 'react-bootstrap';
 import { HttpHandler } from '../http/handler';
 import empy from '../public/empy2.jpg';
 import CardPremium from './CardPremium.jsx';
+import Logo from '../public/vendup.png';
 
 const ComprasComponent = ({ userId }) => {
   const [userValue, setUserValue] = useState({});
@@ -19,7 +20,7 @@ const ComprasComponent = ({ userId }) => {
     getUser();
   }, []);
 
-  // console.log(userValue)
+  // console.log(userValue);
 
   return (
     <>
@@ -28,12 +29,64 @@ const ComprasComponent = ({ userId }) => {
       ) : (
         <div className="container">
           <div className="row">
-            <h1 className="text-center my-5">{userValue.purchases && userValue.purchases.length > 0 ? 'Estos son tus articulos Comprados' : 'Aun no has comprado nada ...'}</h1>
+            <h3 className="text-center my-5">
+              {userValue.purchases && userValue.purchases.length > 0
+                ? 'Estos son tus articulos Comprados'
+                : `Bienvenido ${userValue.email}`}
+            </h3>
             {userValue.purchases.length === 0 ? (
-              <div className="d-flex justify-content-center">
+              <div className="d-flex flex-column align-items-center justify-content-center">
                 <a href="/products">
-                  <img width={400} height={286} className="align-self-center mr-3" src={empy} alt="Mi imagen" style={{ borderRadius: '10%', boxShadow: '1px 2px 9px' }} />
+                  <img className="align-self-center mb-3" src={Logo} alt="Mi imagen" />
                 </a>
+                <h1 className="text-center mb-3">Bienvenido a Vendup</h1>
+                <p className="text-center mb-5">
+                  En nuestra plataforma puedes comprar y vender una gran variedad de productos entre particulares. Desde
+                  ropa y accesorios hasta productos electrónicos y artículos de decoración. Comienza a disfrutar de
+                  todas las ventajas de ser parte de nuestra comunidad.
+                </p>
+                <div className="row">
+                  <div className="col-md-6">
+                    <div className="card mb-4 shadow">
+                      <div className="card-body">
+                        <h5 className="card-title text-center mb-4">Tus Compras</h5>
+                        <p className="card-text">Aquí aparecerán todos los productos que hayas adquirido.</p>
+                      </div>
+                    </div>
+                    <div className="card mb-4 shadow">
+                      <div className="card-body">
+                        <h5 className="card-title text-center mb-4">Subir Producto</h5>
+                        <p className="card-text">
+                          Para empezar a vender, tan solo tienes que ir al apartado "Subir producto" y rellenar el
+                          formulario.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="card mb-4 shadow">
+                      <div className="card-body">
+                        <h5 className="card-title text-center mb-4">Editar Perfil</h5>
+                        <p className="card-text">En el apartado "Editar Perfil" puedes configurar tus datos.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="card mb-4 shadow">
+                      <div className="card-body">
+                        <h5 className="card-title text-center mb-4">Tus Ventas</h5>
+                        <p className="card-text">Aquí podrás ver y controlar los productos que tienes a la venta.</p>
+                      </div>
+                    </div>
+                    <div className="card mb-4 shadow">
+                      <div className="card-body">
+                        <h5 className="card-title text-center mb-4">Hazte Premium</h5>
+                        <p className="card-text">
+                          En el apartado "Premium" puedes destacar tu producto y aumentar su tiempo de venta en la
+                          plataforma.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             ) : (
               userValue.purchases.map((item, index) => (
