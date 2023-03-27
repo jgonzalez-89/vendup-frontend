@@ -1,7 +1,7 @@
 import Cookies from "js-cookie";
 
-const API_BASE_URL = "https://flask-api-vendup.onrender.com";
-// const API_BASE_URL = "https://flask-test-5dde.onrender.com";
+// const API_BASE_URL = "https://flask-api-vendup.onrender.com";
+const API_BASE_URL = "http://127.0.0.1:3001/";
 const API_USER_URL = `${API_BASE_URL}/api/users`;
 const API_PRODUCT_URL = `${API_BASE_URL}/api/products`;
 const API_LOGIN_URL = `${API_BASE_URL}/login`;
