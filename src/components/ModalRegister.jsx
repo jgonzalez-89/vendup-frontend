@@ -11,6 +11,7 @@ function Register() {
   const [errorMessage, setErrorMessage] = useState('');
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handler = new HttpHandler();
   const navigate = useNavigate();
@@ -21,7 +22,6 @@ function Register() {
     event.preventDefault();
 
     if (!acceptedTerms) {
-      setErrorMessage('You must accept the terms and conditions before registering.');
       return;
     }
 
@@ -31,17 +31,22 @@ function Register() {
 
     if (response && response.status === 200) {
       setIsRegistered(true);
-      setErrorMessage('');
+      setSuccessMessage(`Registro completado`);
       setTimeout(() => {
         setShow(false);
-      }, 6000); // 3 segundos de demora antes de cerrar el modal
+        setIsRegistered(false);
+        setSuccessMessage('');
+      }, 3000); // 3 segundos de demora antes de cerrar el modal y limpiar los estados
     } else {
-      setErrorMessage('There was a problem registering. Please try again later.');
+      setErrorMessage('Ha ocurrido un error durante el registro. Por favor, inténtelo de nuevo.');
     }
   };
 
+
   const handleCloseView = () => {
     setShow(false);
+    setSuccessMessage('');
+    setErrorMessage('');
   };
 
   return (
@@ -57,7 +62,7 @@ function Register() {
         <Modal.Body>
           {isRegistered ? (
             <p className="alert alert-info text-center">
-              Se ha enviado un correo electrónico de confirmación a {email}. Por favor, siga las instrucciones para validar su cuenta.
+              {successMessage}
             </p>
           ) : (
             <>
@@ -69,6 +74,7 @@ function Register() {
                 <Form.Check className="mt-3" type="checkbox" label="He leído y acepto los términos y condiciones" onChange={(e) => setAcceptedTerms(e.target.checked)} />
               </Form.Group>
               {errorMessage !== '' && <p className="alert alert-danger text-center">{errorMessage}</p>}
+              {isRegistered && <p className="alert alert-info text-center">{successMessage}</p>}
             </>
           )}
         </Modal.Body>
