@@ -20,16 +20,20 @@ function Login() {
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    console.log(email, password);
+    // console.log(email, password);
     const response = await handler.login(email, password);
-    console.log(response);
-
+    // console.log(response);
+  
     if (response.access_token) {
       setShow(false);
       Cookies.set('access_token', response.access_token);
       navigate('/user');
     } else {
-      setErrorMessage('Email o contraseña incorrectos');
+      if (response.status === 401 && response.message === "Inactive user") {
+        setErrorMessage('Tu cuenta no está activa. Por favor, verifica tu correo electrónico para activar tu cuenta.');
+      } else {
+        setErrorMessage('Email o contraseña incorrectos');
+      }
     }
   };
 
